@@ -1,0 +1,27 @@
+<div class="container-fluid mt-2">
+  <div *ngIf="!users">User details loading...</div>
+  <div class="m-2 p-2" *ngIf="users">
+    <div class="row border m-2  p-2 font-weight-bold no-gutters row-cols-sm-6"
+         style="background-color: #C2DBFF;box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;">
+      <div class="col-lg-auto pr-3">#</div>
+      <div class="col-lg-2">Display Name</div>
+      <div class="col-lg-3">Mail</div>
+<!--      <div class="col-lg-2">Mail Nickname</div>-->
+      <div class="col-lg-1">Surname</div>
+      <div class="col-lg-3">Principal name</div>
+      <div class="col-lg">Manager</div>
+    </div>
+    <div class="row m-2 p-2 test-records no-gutters" *ngFor="let user of users; index as i"
+         style="background-color: #FFFFFF; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;">
+      <div class="col-lg-auto pr-3">{{i + 1}}</div>
+      <div class="col-lg-2">{{user.displayName}}</div>
+      <div class="col-lg-3">{{user.mail}} - ({{user.mailNickname}})</div>
+      <div class="col-lg-1">{{user.surname}}</div>
+      <div class="col-lg-3">{{user.userPrincipalName}}</div>
+      <div class="col-lg" *ngIf="user.manager">{{user.manager.givenName}} - {{user.manager.mail}}</div>
+      <div class="col-lg align-self-center" *ngIf="!user.manager" colspan="2" style="background-color: #fa8072;color: #FFFFFF"> Manager
+        Not Assigned
+      </div>
+    </div>
+  </div>
+</div>

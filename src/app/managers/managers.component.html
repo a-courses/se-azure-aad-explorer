@@ -1,0 +1,21 @@
+<div class="container-fluid mt-2">
+  <div *ngIf="!managers">Managers details loading...</div>
+  <div class="m-2 p-2" *ngIf="managers">
+    <div class="row border m-2 p-2 font-weight-bold"
+         style="background-color: #C2DBFF;box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;">
+      <div class="col-lg-1">#</div>
+      <div class="col-lg-3">Id</div>
+      <div class="col-lg-2">Given Name</div>
+      <div class="col-lg-2">Mail</div>
+      <div class="col-lg-2">Principal Name</div>
+    </div>
+    <div class="row m-2 p-2 test-records" *ngFor="let manager of managers;  index as i"
+         style="background-color: #FFFFFF; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;">
+      <div class="col-lg-1">{{i + 1}}</div>
+      <div class="col-lg-3">{{manager.id}}</div>
+      <div class="col-lg-2">{{manager.givenName}}</div>
+      <div class="col-lg-2">{{manager.mail}}</div>
+      <div class="col-lg-2">{{manager.userPrincipalName}}</div>
+    </div>
+  </div>
+</div>

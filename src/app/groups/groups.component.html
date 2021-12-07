@@ -1,0 +1,27 @@
+<div class="container-fluid mt-2">
+  <div *ngIf="!groups">Groups details loading...</div>
+  <div class="m-2 p-2" *ngIf="groups">
+    <div class="row border m-2 p-2 font-weight-bold"
+         style="background-color: #C2DBFF;box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;">
+      <div class="col-lg-1">#</div>
+      <div class="col-lg-3">Display Name</div>
+      <div class="col-lg-2">Created Date</div>
+      <div class="col-lg-2">Renewed Date</div>
+      <div class="col-lg-2">Security Enabled</div>
+      <div class="col-lg-2">Mail Enabled</div>
+    </div>
+    <div class="row m-2 p-2 test-records" *ngFor="let group of groups;  index as i"
+         style="background-color: #FFFFFF; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;">
+      <div class="col-lg-1">{{i + 1}}</div>
+      <div class="col-lg-3">{{group.displayName}}</div>
+      <div class="col-lg-2">{{group.createdDateTime}}</div>
+      <div class="col-lg-2">{{group.renewedDateTime}}</div>
+      <div class="col-lg-2"
+           [ngStyle]="{'background-color': !group.securityEnabled ? '#fa8072':'transparent','color': !group.securityEnabled ? '#FFFFFF':''}">
+        {{group.securityEnabled}}
+      </div>
+      <div class="col-lg-2">{{group.mailEnabled}}</div>
+    </div>
+  </div>
+
+</div>
