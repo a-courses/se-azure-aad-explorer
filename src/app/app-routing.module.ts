@@ -5,10 +5,11 @@ import {ManagersComponent} from './managers/managers.component';
 import {GroupsComponent} from './groups/groups.component';
 
 const routes: Routes = [
-  {path: '', component: UsersComponent},
   {path: 'users', component: UsersComponent},
   {path: 'managers', component: ManagersComponent},
   {path: 'groups', component: GroupsComponent},
+  {path: '', redirectTo: '/users', pathMatch: 'full'},
+  {path: '**', redirectTo: '/users', pathMatch: 'full'},
 ];
 
 @NgModule({
