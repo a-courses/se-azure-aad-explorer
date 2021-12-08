@@ -12,7 +12,6 @@ import {CommonModule} from '@angular/common';
 import { AdduserComponent } from './users/adduser/adduser.component';
 import { DeleteuserComponent } from './users/deleteuser/deleteuser.component';
 import { AddgroupComponent } from './groups/addgroup/addgroup.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeaderComponent,
     AdduserComponent,
     DeleteuserComponent,
-    AddgroupComponent,
-    DashboardComponent
+    AddgroupComponent
   ],
   imports: [
     BrowserModule,
